@@ -2,9 +2,11 @@
 
 MapContainer::MapContainer(MapTemplate* mapTemp) {
 	center = { 0,0 };
+	mapWidth = 20;
+	mapHeight = 20;
 	int data[400];
 	for (int i = 0; i < 400; i++) {
-		data[i] = 0;
+		data[i] = 5;
 	}
 	layer1 = new MapLayer(mapTemp, data, 20, 20);
 
@@ -43,10 +45,27 @@ void MapContainer::ScrollMap(int deltaX, int deltaY) {
 	center.y += deltaY;
 }
 
-MAP_COORD MapContainer::getCenter() {
+MAP_GRID MapContainer::getCenter() {
 	return center;
 }
 
 void MapContainer::setCenter(int x, int y) {
-	center = { x, y };
+	if (x <= mapWidth && y <= mapHeight &&
+		x >= 0 && y>=0) {
+		center = { x, y };
+	}
+	else {
+		if (x > mapWidth) {
+			x = mapWidth;
+		}
+		else if (x < 0) {
+			x = 0;
+		}
+		if (y > mapHeight) {
+			y = mapHeight;
+		}
+		else if (y < 0) {
+			y = 0;
+		}
+	}
 }

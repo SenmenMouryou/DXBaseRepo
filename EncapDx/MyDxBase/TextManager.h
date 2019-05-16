@@ -19,21 +19,23 @@ public:
 	~TextManager();
 
 	/**
-	增加一条文本
-	param:	x 文本的x位置
-			y 文本的y位置
-			width 文本区域的宽
-			height 文本区域的高
-			textString 文本内容
-	return: 增加的文本对象指针 
+	* 增加一条文本
+	* @param x{int} 文本的x位置
+	* @param y{int} 文本的y位置
+	* @param width{int} 文本区域的宽
+	* @param height{int} 文本区域的高
+	* @param font{LPD3DXFONT} 文本字体
+	* @param textColor{D3DCOLOR} 文本颜色
+	* @param textString{string} 文本内容
+	* @return 增加的文本对象指针 
 	*/
 	Text* AddText(int x, int y, int width, int height, 
 				  LPD3DXFONT font, D3DCOLOR textColor,
 				  string textString);
 
 	/**
-	删除一条文本
-	param:	text 需要删除的文本对象
+	* 删除一条文本
+	* @param text{Text*} 需要删除的文本对象
 	*/
 	void DelText(Text* text);
 

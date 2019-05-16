@@ -91,7 +91,7 @@
       <Filter>源文件\MapSys</Filter>
     </ClCompile>
     <ClCompile Include="MapFile.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\MapSys</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -147,7 +147,7 @@
       <Filter>头文件\MapSys</Filter>
     </ClInclude>
     <ClInclude Include="MapFile.h">
-      <Filter>头文件</Filter>
+      <Filter>头文件\MapSys</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

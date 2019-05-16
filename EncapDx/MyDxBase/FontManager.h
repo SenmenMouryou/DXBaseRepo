@@ -24,9 +24,9 @@ private:
 	LPD3DXFONT font_Heiti30;
 
 	/**
-	创建字体
-	param:	name 字体名称,
-	size 字体大小
+	* 创建字体
+	* @param name{string} 字体名称
+	* @param size{int} 字体大小
 	*/
 	LPD3DXFONT MakeFont(string name, int size);
 

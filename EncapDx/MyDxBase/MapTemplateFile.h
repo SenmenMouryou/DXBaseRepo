@@ -12,16 +12,16 @@ public:
 	~MapTemplateFile();
 
 	/**
-	写入为文件
-	param:	mapFilename 地图文件名
-	return:	写入成功情况
+	* 写入为文件
+	* @param mapFilename 地图文件名
+	* @return 写入成功情况
 	*/
 	bool wirteToFile(string mapFilename);
 
 	/**
-	从文件读取
-	param:	mapFilename 地图文件名
-	return:	读取成功情况
+	* 从文件读取
+	* @param mapFilename 地图文件名
+	* @return 读取成功情况
 	*/
 	bool readFromFile(string mapFilename);
 

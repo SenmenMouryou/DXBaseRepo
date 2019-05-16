@@ -14,6 +14,8 @@ public:
 
 	/**
 	* 绘制当前地图
+	* @param SCREENW{int}
+	* @param SCREENH{int}
 	*/
 	void RendPresentMap(int SCREENW, int SCREENH);
 
@@ -36,9 +38,9 @@ private:
 	MapTemplate * presentTemplate = NULL;
 
 	/**
-	读取地图模板
-	param:	filename 文件名
-	return:	地图模板对象
+	* 读取地图模板
+	* @param filename{string} 文件名
+	* @return 地图模板对象
 	*/
 	MapTemplate* readTempleteFromFile(string filename);
 

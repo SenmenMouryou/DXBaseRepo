@@ -19,7 +19,7 @@ SpriteManager::~SpriteManager() {
 	if (!usingSprites.empty()) {
 		list<Sprite*>::iterator iter;
 		for (iter = usingSprites.begin(); iter != usingSprites.end(); iter++) {
-			spritePool->PutSprite(*iter);
+			spritePool->RecoverSprite(*iter);
 		}
 	}
 	//ÊÍ·Å¾«Áé³Ø
@@ -35,9 +35,9 @@ Sprite * SpriteManager::GetSprite(string imageFile, int x, int y, int width, int
 	return sprite;
 }
 
-void SpriteManager::PutSprite(Sprite * sprite) {
+void SpriteManager::RecoverSprite(Sprite * sprite) {
 	usingSprites.remove(sprite);
-	spritePool->PutSprite(sprite);
+	spritePool->RecoverSprite(sprite);
 }
 
 bool SpriteManager::Collision(Sprite * spt1, Sprite * spt2) {

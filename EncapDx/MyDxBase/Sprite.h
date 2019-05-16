@@ -15,28 +15,35 @@ class Sprite {
 public:
 
 	/**使用材质的构造器
-	*param: d3d设备， 图像文件名， 图像列数, 起始动画帧, 透明色
+	* @param d3dev{LPDIRECT3DDEVICE9} d3d设备
 	*/
 	Sprite(LPDIRECT3DDEVICE9 d3ddev);
 	~Sprite();
 
 	/**
-	初始化精灵材质
-	param: 图像文件, 图像列数, 图像总帧数, 图像透明度
+	* 初始化精灵材质
+	* @param imageFile{string} 图像文件
+	* @param columns{columns} 图像列数
+	* @param totFrame{int} 图像总帧数
+	* @param transcolor{D3DCOLOR} 图像透明度
 	*/
 	void initTexture(string imageFile, int columns = 1, int totFrame = 1,
 					  D3DCOLOR transcolor = DEFAULT_TRANSCOLOR);
 
 	/**
-	精灵动画
-	param:
+	* 精灵动画
+	* @param startframe{int} 起始帧
+	* @param endframe{int} 结束帧
+	* @param direction{int} 精灵动画变换方向
+	* @param starttime{int&} 动画起始时间
+	* @param delay{int} 每帧延迟时间
 	*/
 	void Animate(int startframe, int endframe, int direction,
 				 int &starttime, int delay);
 
 	/**
-	绘制当前变换的精灵材质图像
-	param: 精灵对象
+	* 绘制当前变换的精灵材质图像
+	* @param spriteobj{LPD3DXSPRITE} 精灵对象
 	*/
 	void DrawSprite(LPD3DXSPRITE spriteobj);
 
@@ -86,8 +93,9 @@ private:
 	D3DCOLOR transcolor = DEFAULT_TRANSCOLOR;
 
 	/**
-	加载图片到材质
-	param: 图像文件名, 透明色
+	* 加载图片到材质
+	* @param imageFile{string}图像文件名
+	* @param transcolor{D3DCOLOR}透明色
 	*/
 	bool LoadTexture(string imageFile, D3DCOLOR transcolor = DEFAULT_TRANSCOLOR);
 

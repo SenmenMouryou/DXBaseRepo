@@ -31,7 +31,7 @@ Sprite* SpritePool::GetSprite(string imageFile, int x, int y, int width, int hei
 	}
 }
 
-void SpritePool::PutSprite(Sprite* sprite) {
+void SpritePool::RecoverSprite(Sprite* sprite) {
 	reservedSprites.push_back(sprite);
 }
 

@@ -69,11 +69,22 @@ private:
 	bool btn_3 = false;
 
 	/**
-	键盘输入处理
+	* 游戏更新函数
+	*/
+	void GameUpdate();
+
+	/**
+	* 渲染图像
+	*/
+	void GameRender();
+
+	/**
+	* 键盘输入处理
 	*/
 	void HandleKeyboardInput();
 
 	//测试精灵
 	Sprite* sprite1;
+
 };
 

@@ -41,8 +41,8 @@ MapTemplate::~MapTemplate() {
 }
 
 void MapTemplate::DrawTile(int x, int y, int tileNum, LPD3DXSPRITE spriteobj) {
-	int scrX = tileNum % columns;
-	int scrY = tileNum / columns;
+	int scrX = tileWidth * (tileNum % columns);
+	int scrY = tileHeight * (tileNum / columns);
 	RECT srcRect = { scrX, scrY, scrX + tileWidth, scrY + tileHeight };
 	D3DXVECTOR3 destPos((float)x, (float)y, 0);
 

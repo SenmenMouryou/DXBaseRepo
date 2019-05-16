@@ -23,7 +23,7 @@ public:
 	~DirectXClass();
 
 	/**
-	‰÷»æ≥°æ∞
+	* ‰÷»æ≥°æ∞
 	*/
 	void RendScene();
 

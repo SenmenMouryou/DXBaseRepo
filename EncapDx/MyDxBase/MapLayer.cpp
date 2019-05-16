@@ -15,7 +15,7 @@ MapLayer::~MapLayer() {
 	delete mapData;
 }
 
-void MapLayer::RendLayer(MAP_COORD center, LPD3DXSPRITE spriteobj, int SCREENW, int SCREENH) {
+void MapLayer::RendLayer(MAP_GRID center, LPD3DXSPRITE spriteobj, int SCREENW, int SCREENH) {
 
 	//显示中心位置坐标
 	int x = center.x;
@@ -28,7 +28,7 @@ void MapLayer::RendLayer(MAP_COORD center, LPD3DXSPRITE spriteobj, int SCREENW, 
 	//屏幕高幅图块数
 	int screenTilesH = SCREENH / tileHeight;
 	//起始绘制位置坐标
-	MAP_COORD startCoord;
+	MAP_GRID startCoord;
 	//如果起始坐标不是最左端
 	if (x - screenTilesW / 2 >= 1) {
 		startCoord.x = x - screenTilesW / 2 - 1;
@@ -52,7 +52,7 @@ void MapLayer::RendLayer(MAP_COORD center, LPD3DXSPRITE spriteobj, int SCREENW, 
 
 	for (int i = startTileNum; i < mapDataLen && i<endTileNum; i++) {
 		//当前绘制图块的坐标
-		MAP_COORD thisTile = { i % width, i / width };
+		MAP_GRID thisTile = { i % width, i / width };
 
 		int destx = SCREENW / 2 - tileWidth / 2 + (thisTile.x - center.x) * tileWidth;
 		int desty = SCREENH / 2 - tileHeight / 2 + (thisTile.y - center.y) * tileHeight;

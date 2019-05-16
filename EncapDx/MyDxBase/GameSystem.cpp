@@ -35,28 +35,16 @@ void GameSystem::GameLoop(HWND hWnd) {
 		MessageBox(hWnd, "错误：d3d设备未正常运行", "Error", 0);
 		return;
 	}
-	//处理按键
-	HandleKeyboardInput();
-	
-	if (btnDown) {
-		sprite1->setXY(sprite1->getX(), sprite1->getY() + 1);
-	}
-	if (btnUp) {
-		sprite1->setXY(sprite1->getX(), sprite1->getY() - 1);
-	}
-	if (btnRight) {
-		sprite1->setXY(sprite1->getX() + 1, sprite1->getY());
-	}
-	if (btnLeft) {
-		sprite1->setXY(sprite1->getX() - 1, sprite1->getY());
-	}
+
+	//更新
+	GameUpdate();
 
 	//渲染场景
-	directXPack->RendScene();
+	GameRender();
 }
 
 void GameSystem::GameEnd() {
-	spriteManager->PutSprite(sprite1);
+	spriteManager->RecoverSprite(sprite1);
 	
 }
 
@@ -86,6 +74,29 @@ bool GameSystem::getBtn_2() {
 
 bool GameSystem::getBtn_3() {
 	return btn_3;
+}
+
+void GameSystem::GameUpdate() {
+	//处理按键
+	HandleKeyboardInput();
+
+	if (btnDown) {
+		sprite1->setXY(sprite1->getX(), sprite1->getY() + 1);
+	}
+	if (btnUp) {
+		sprite1->setXY(sprite1->getX(), sprite1->getY() - 1);
+	}
+	if (btnRight) {
+		sprite1->setXY(sprite1->getX() + 1, sprite1->getY());
+	}
+	if (btnLeft) {
+		sprite1->setXY(sprite1->getX() - 1, sprite1->getY());
+	}
+
+}
+
+void GameSystem::GameRender() {
+	directXPack->RendScene();
 }
 
 void GameSystem::HandleKeyboardInput() {

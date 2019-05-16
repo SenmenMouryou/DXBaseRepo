@@ -1,3 +1,6 @@
+/**
+* 取得PHG/JPG图像的分辨率大小
+*/
 #pragma once
 
 #include <stdio.h>

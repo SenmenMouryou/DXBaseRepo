@@ -10,12 +10,16 @@ public:
 	~SpritePool();
 
 	/**
-	取得池中的精灵对象指针,初始化材质
-	param:	imageFile 图像,
-			columns 图像列数,
-			totFrame 图像总帧数, 
-			transcolor 图像透明色
-	return: 初始化材质的精灵对象指针
+	* 取得池中的精灵对象指针,初始化材质
+	* @param imageFile{string} 图像文件
+	* @param x{int} 精灵x位置
+	* @param y{int} 精灵y位置
+	* @param width{int} 精灵宽度
+	* @param height{int} 精灵高度
+	* @param columns{int} 图像列数
+	* @param totFrame{int} 图像总帧数
+	* @param transcolor{D3DCOLOR} 图像透明色
+	* @return 初始化材质的精灵对象指针
 	*/
 	Sprite* GetSprite(string imageFile,
 					  int x, int y,
@@ -24,10 +28,10 @@ public:
 					 D3DCOLOR transcolor = DEFAULT_TRANSCOLOR);
 
 	/**
-	放回精灵对象指针
-	param: sprite 待放回精灵池的精灵对象指针 
+	* 放回精灵对象指针
+	 *@param sprite{Sprite*} 待放回精灵池的精灵对象指针 
 	*/
-	void PutSprite(Sprite* sprite);
+	void RecoverSprite(Sprite* sprite);
 	
 private:
 	//d3d设备

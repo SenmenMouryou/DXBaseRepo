@@ -6,7 +6,6 @@
 #include <iostream>
 #include <d3d9.h>
 #include <d3dx9.h>
-#include <list>
 
 #define DEFAULT_MAP_TRANSCOLOR D3DCOLOR_XRGB(255,255,255)
 
@@ -27,15 +26,15 @@ class MapTemplate {
 public:
 
 	/**
-	构造器
-	param:	d3ddev d3d设备
-			tileWidth 图块宽
-			tileHeight 图块高
-			imageFile 图像文件名
-			columns 图块列数
-			rows 图块行数
-			obinfoArray 不可通行信息数组
-			transcolor 透明色
+	* 构造器
+	* @param d3ddev d3d设备
+	* @param tileWidth 图块宽
+	* @param tileHeight 图块高
+	* @param imageFile 图像文件名
+	* @param columns 图块列数
+	* @param rows 图块行数
+	* @param obinfoArray 不可通行信息数组
+	* @param transcolor 透明色
 	*/
 	MapTemplate(LPDIRECT3DDEVICE9 d3ddev,
 				string imageFile,
@@ -46,11 +45,11 @@ public:
 	~MapTemplate();
 
 	/**
-	按图块信息绘制图块
-	param:	x 绘制x位置
-			y 绘制y位置
-			tileNum 绘制的图块索引
-			spriteobj 绘制精灵
+	* 按图块信息绘制图块
+	* @param x 绘制x位置
+	* @param y 绘制y位置
+	* @param tileNum 绘制的图块索引
+	* @param spriteobj 绘制精灵
 	*/
 	void DrawTile(int x, int y, int tileNum, LPD3DXSPRITE spriteobj);
 
